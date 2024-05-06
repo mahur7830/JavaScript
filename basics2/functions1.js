@@ -87,3 +87,102 @@ console.log(sayHello("Anil kumar"));
        //console.log(getArray(arr));
            console.log([67,45,65,345,234,546,98]);
                                     */
+
+
+/*
+//-------------------Important concept for interview and uderstanding-----------------------//
+     //Here we can call  function before declaration           
+console.log(one());
+function one()
+{
+    return 10;
+}
+
+//          REMEMBER ALWAYS             //
+//Here we can not call function before declaration because it is defined as an expression
+//it will give an error
+
+//console.log(val());
+let val=function two()
+{
+    return 20;
+}
+ console.log(val());
+                     */
+
+
+
+ //___________________________ARROW FUNCTION_____________________________//
+//--this keyword refers to the current context--//
+
+/*
+const user={
+  username:"Anil",
+  password:"123987",
+  welcomeMessage: function()
+                  {
+                  console.log(`Welcome ${this.username}, On this wesite`);
+//here this keyword refer to this current  object
+                  console.log(this);
+                  }
+                  
+}
+user.welcomeMessage()
+user.username="Rajendra"
+user.welcomeMessage()
+//here this keyword will refer to an empty object becausen her js is runnig on node.js
+//but when js runs on the browser console then this keyword refers to the window object because in
+// that case window is the most global object
+console.log(this);
+                      */
+
+//___________________________________another try to something understand_________________________//
+
+/*
+function one()
+{
+  let user="anil kumar"
+  // here undefined will be print because heer we are unable to use this keyword in functions
+  //but there are other way are possible so wait for next step
+  console.log(this.user);
+  //here all of the information will be print about this keyword that actually what is inside 
+  // the this keyword
+    console.log(this);
+}
+
+one();
+       */
+
+
+/*
+// use this keyword inside the arrow function
+const arrow = () =>{
+let username="Anil kumar";
+//  Here this keyword will print an empty object
+console.log(this)
+// Here this keyword will print udefined same as was printing in the normar function
+console.log(this.username);
+}
+
+arrow()
+        */
+
+
+
+//____________________________________ARROW FUNCTION________________________________//
+      // if we use curly braces then return keyqord is mandatory to use
+        /*let addition=(num1,num2)=>{
+        return num1+num2;
+        }
+        console.log(addition(10,20));
+                                     */
+     
+//--this is called implicit return--- -//
+             /*let add=(num1,num2)=>num1+num2
+                 //let add=(num1,num2)=>(num1+num2)
+             console.log(add(10,40));*/
+
+             
+//--Returning an object implicitly from an arrow function--//
+            let myNmae=()=>({username:"Anil Kumar"})
+            console.log(myNmae());             
