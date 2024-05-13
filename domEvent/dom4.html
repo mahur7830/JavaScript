@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(77, 63, 63);">
+    <ul class="language">
+        <li>javaScript</li>
+    </ul>
+</body>
+<script>
+    //By this way a created element will be append at the end of the list so, all the elements will have to
+   // traverse so this may be time consumption way if thousand of element are already exist
+    function addLanguage(langName){
+        const li=document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("typeScript")
+    addLanguage("python")
+    //-----Add language in optimize way-----//
+    function addLangInOptimizeWay(languageName)
+    {
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(languageName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLangInOptimizeWay('golang')
+
+
+    //______________________________________Edit Language________________________________________//
+                 /* const oldLang=document.querySelector('li:nth-child(2)')
+                  console.log(oldLang);*/
+    //-----------This is first way to edit ,but it is not optimize-------------  //
+                     //oldLang.innerHTML='kotlin'//
+   //-------------- This is second way to edit ------------//  
+                  /* const newLi=document.createElement('li')
+                   newLi.textContent='Mojo'
+                   oldLang.replaceWith(newLi)*/
+   //------------ Third way to edit---------------------------//
+                 /* const oldlang=document.querySelector("li:first-child")   
+                  oldlang.outerHTML='<li>C++</li>' */
+    
+    
+    //_________________________________REMOVE__________________________________//
+                       /* const langu=document.querySelector("li:nth-child(3)")
+                        langu.remove()*/
+</script>
+</html>

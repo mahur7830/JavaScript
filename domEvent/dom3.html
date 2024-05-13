@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     const div = document.createElement('div')
+     div.className='main'
+     div.id=Math.round(Math.random()*10+1)
+     console.log(div);
+     div.setAttribute('title','created title')
+     div.style.backgroundColor='green'
+     div.style.padding='12px'
+     //  to add text in div
+     //div.innerText='learn javaScript'
+     const addText=document.createTextNode('I am learning DOM')
+     div.appendChild(addText)
+     // to add text on the document
+     document.body.appendChild(div)
+    </script>
+</body>
+</html>

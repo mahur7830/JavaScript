@@ -63,6 +63,7 @@ console.log(progra[key]);
 
 //___________________for each loop________________//
 // for each loop has three parameters, 1. Value, 2. Index, 3. An Array on which it to be used 
+// it doesn't return any value
 
 const progra=["js","c","c++","java","python","kotlin"]
 

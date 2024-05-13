@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl"   src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //__________________second approach________________//
+    //------This approach is not too good because it doesn't provide much more information about element
+    // so we should use event listener because event listener provide the ability of propagation
+           /*document.getElementById('owl').onclick=function(){
+           alert('owl clicked by other one')*/
+
+           //_____________________third approach_____________________//
+                      /* document.getElementById('owl').addEventListener('click',function(){
+                       alert('owl clicked again')
+                            })    */ 
+          
+          
+             //____________________Some old approach______________________//
+                                //attachEvent()
+                                //jQuery
+                        
+                                
+            //______Learn about these topics of event________________//
+                      //  Time, timestamp, defaultPrevented
+                     //   target, toElement, srcElement, current target
+                     //client x, client y, screen x, screen y
+                     //altkey, ctrlkey, shiftkey, keycode   
+                           
+ //____________________________Event Propagation_____________________________//
+
+
+           //------------Event Bubbling--------bottom to top------//
+                     /*document.getElementById('images').addEventListener('click',function(e){
+                        console.log("clicked inside the ul");
+                     },false)
+                     
+                     document.getElementById('owl').addEventListener('click',function(e){
+                        console.log("clicked on owl");
+                //stopPropagation stop the compiler to go to on above  event        
+                        e.stopPropagation()
+                     },false)*/
+
+           //-----------------Event Capturing------top to bottm ---------------//
+                    /*document.getElementById('images').addEventListener('click',function(e){
+                        console.log("clicked inside the ul");
+                     },true)
+                     
+                     document.getElementById('owl').addEventListener('click',function(e){
+                        console.log("clicked on owl");
+                     },true)*/
+
+                     
+   //____________________Remove element________________________________//
+           document.querySelector('#images').addEventListener('click',function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName==='IMG')
+            { 
+                console.log(e.target.id);
+            const removeIt=e.target.parentNode;
+            removeIt.remove();
+            //removeIt.parentNode.removeChild(removeIt)
+            }
+           })         
+
+</script>
+</html>
