@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(66, 125, 125); color: rgb(26, 23, 24);">
+ 0	UNSENT	Client has been created. open() not called yet.
+ 1	OPENED	open() has been called.
+ 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+ 3	LOADING	Downloading; responseText holds partial data.
+ 4	DONE	The operation is complete.
+</body>
+<script>
+//_________________________XMLhttprequest_________________//
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    //const requestUrl = 'https://randomuser.me/api/'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+
+    //------- To tack the states of the request---------------------//
+       xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+ //----requestResponse gives the data into string format so to convert string into jason object 
+ // when data is fetched then mostly data comes into string format           
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+            console.log(this.responseText);
+        }
+    }
+    
+    //-----------to call open() method-----------//
+    xhr.send();
+</script>
+</html>
